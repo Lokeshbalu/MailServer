@@ -18,7 +18,7 @@ public class interfaceManager  {
         String dataRead="";
         try{
 
-            FileReader fr= new FileReader("C:\\MyFolder\\MyDatabase-Private\\adorein\\Mail Server\\sourceCode\\Interface\\"+fname);
+            FileReader fr= new FileReader("webresources\\"+fname);
             while ((ch=fr.read())!=-1){
 
                 dataRead=dataRead+(char)ch;
