@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mail System</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0">
+    <style type="text/css">
+	body{
+		margin: 0px;
+		padding: 0px;
+	}
+.naver{
+
+	position:fixed;
+	margin:0px;
+	width:100%;
+	height:5em;
+	background-color:#993321;
+	padding:0px;
+
+}
+.mainarea{
+
+	padding-top:5em;
+	padding-bottom: 5em;
+}
+.floater{
+	float:left;
+	padding:0px;
+	position: fixed;
+	margin:0px;
+	margin-left:0px;
+	width:17%;
+	background-color:#3e3e3e;
+	margin-right:6px;
+
+
+}
+.labe{
+	width:100%;
+	height:3em;
+	border-bottom:1px solid #000000;
+}
+
+
+
+.items{
+
+	padding:0.6em;
+	color:#ffffff;
+	margin-top:1em;
+}
+
+.botlabel{
+	margin:0px;
+	padding:0.7em;
+	color:#5e5e5e;
+
+}
+a{
+
+	text-decoration:none;
+}
+.container{
+
+	margin-left:19%;
+
+}
+.QPanel{
+
+	border: 1px solid #A8A8A8;
+	margin: 3px;
+	border-radius: 7px;
+	margin-bottom: 5px;
+
+}
+.btn{
+
+	height:2.5em;
+	width:5em;
+	border: none;
+	border-radius: 4px;
+	margin: 2em;
+}
+.btn-success{
+	background-color: #4e4e4e;
+}
+
+.panel{
+
+		margin: 5px;
+		padding: 1.5em;
+		border-bottom: 1px solid #993321;
+
+}
+form{
+
+	display: inline;
+
+}
+.spc{
+	padding:2em;
+}
+
+</style>
+</head>
+<body>
+<div class="naver">
+    <h2 style="margin:0px;padding:1.2em;color:#ffffff;">Student Mailing System</h2>
+</div>
+<div class="mainarea">
+    <div class="floater">
+        <div class="labe"  >
+            <a href="admin.html">
+                <h4 class="items" style="margin-top:0px;padding-top:0.8em;">Mail client</h4>
+            </a>
+        </div>
+        <div class="labe" >
+            <a href="datalink.html" >
+                <h4 class="items">Student Registration</h4>
+            </a>
+        </div>
+    </div>
+    <div class="container" id="conta-body">
+        <div class="QPanel">
+            <div class="panel">
+                <form>
+                    <input type="radio" name="yes" id="f1" onclick="displayer(this.id);"> Single student
+                </form>
+                <form style="padding-left: 3em;">
+                    <input type="radio" id="f2" name="no" onclick="displayer(this.id);">Bulk mail
+                </form>
+            </div>
+            <div class="panel">
+                <p style="display: inline;" id="blk">$(data)</p>
+            </div>
+            <div class="panel">
+                <p>Subject</p>
+                <textarea style="height: 3em;width: 95%;border-style: line;"></textarea>
+            </div>
+            <div class="panel">
+                <p> Message </p>
+                <textarea  name="viewer" style="width:95%; height: 15em;"></textarea>
+            </div>
+            <div >
+                <button class="btn btn-success" style="background-color: #993321; color: #ffffff;"> Send </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ................................................script part............................  -->
+<script type="text/javascript">
+	var x=0;
+	function displayer(x)
+	{
+		var handle=document.getElementById("f1");
+		var handle1=document.getElementById("f2");
+		if(x=="f1"){
+
+			handle1.checked=false;
+			document.getElementById("blk").innerHTML="<form> Register number:  <input type=text></form>";
+		}
+		else if(x=="f2"){
+			handle.checked=false;
+			document.getElementById("blk").innerHTML="<form> Section:  <input type=text>  Department:  <input type=text>  year:  <input type=text></form>";
+		}
+	}
+	//<form class='spc';> <input   type=radio>All students</form><form class='spc';><input type=radio  >students in same department</form><form class='spc';><input type=radio >students admitted in same year </form>
+</script>
+
+<!-- ................................................................................................ -->
+</body>
+</html>
